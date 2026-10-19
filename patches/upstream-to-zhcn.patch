@@ -12,34 +12,34 @@
  	<title>Transmission Web Control</title>
  	<!-- Style sheet -->
 -	<link rel="stylesheet" type="text/css" href="tr-web-control/style/before-easyui.css?v=20200914" />
-+	<link rel="stylesheet" type="text/css" href="tr-web-control/style/before-easyui.css?v=20261019" />
++	<link rel="stylesheet" type="text/css" href="tr-web-control/style/before-easyui.css?v=20261019-2" />
  	<link id="styleEasyui" rel="stylesheet" type="text/css"
 -		href="tr-web-control/script/easyui/themes/default/easyui.css?v=20200914" />
-+		href="tr-web-control/script/easyui/themes/default/easyui.css?v=20261019" />
++		href="tr-web-control/script/easyui/themes/default/easyui.css?v=20261019-2" />
  	<link rel="stylesheet" type="text/css" href="tr-web-control/script/plugins/jquery.webui-popover.css" />
 -	<link rel="stylesheet" type="text/css" href="tr-web-control/style/base.css?v=20200914" />
 -	<link rel="stylesheet" type="text/css" href="tr-web-control/script/easyui/themes/icon.css?v=20200914" />
 -	<link rel="stylesheet" type="text/css" href="tr-web-control/style/icon.custom.css?v=20200914" />
 -	<link rel="stylesheet" type="text/css" href="tr-web-control/style/iconfont/iconfont.css?v=20201001" />
-+	<link rel="stylesheet" type="text/css" href="tr-web-control/style/base.css?v=20261019" />
-+	<link rel="stylesheet" type="text/css" href="tr-web-control/script/easyui/themes/icon.css?v=20261019" />
-+	<link rel="stylesheet" type="text/css" href="tr-web-control/style/icon.custom.css?v=20261019" />
-+	<link rel="stylesheet" type="text/css" href="tr-web-control/style/iconfont/iconfont.css?v=20261019" />
++	<link rel="stylesheet" type="text/css" href="tr-web-control/style/base.css?v=20261019-2" />
++	<link rel="stylesheet" type="text/css" href="tr-web-control/script/easyui/themes/icon.css?v=20261019-2" />
++	<link rel="stylesheet" type="text/css" href="tr-web-control/style/icon.custom.css?v=20261019-2" />
++	<link rel="stylesheet" type="text/css" href="tr-web-control/style/iconfont/iconfont.css?v=20261019-2" />
  	<!-- <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_584244_g4d8d6qr58nnrk9.css"/> -->
  
  	<!-- Base class library -->
-@@ -24,20 +24,21 @@
+@@ -24,29 +24,32 @@
  	<script type="text/javascript" src="tr-web-control/script/jquery/jquery.form.js"></script>
  	<script type="text/javascript" src="tr-web-control/script/jquery/json2.min.js"></script>
  	<script type="text/javascript" src="tr-web-control/script/jquery/Base64.js"></script>
 -	<script type="text/javascript" src="tr-web-control/script/easyui/jquery.easyui.min.js?v=20200914"></script>
-+	<script type="text/javascript" src="tr-web-control/script/easyui/jquery.easyui.min.js?v=20261019"></script>
++	<script type="text/javascript" src="tr-web-control/script/easyui/jquery.easyui.min.js?v=20261019-2"></script>
  	<script type="text/javascript" src="tr-web-control/script/easyui/plugins/jquery.datagrid.drophead.js"></script>
  	<script type="text/javascript" src="tr-web-control/script/plugins/jquery.webui-popover.min.js"></script>
  	<!-- -->
  	<!-- System class library -->
 -	<script type="text/javascript" src="tr-web-control/script/min/FileSaver.min.js?v=20200914"></script>
-+	<script type="text/javascript" src="tr-web-control/script/min/FileSaver.min.js?v=20261019"></script>
++	<script type="text/javascript" src="tr-web-control/script/min/FileSaver.min.js?v=20261019-2"></script>
  	<script type="text/javascript" src="tr-web-control/script/other/clipboard.min.js"></script>
 -	<script type="text/javascript" src="tr-web-control/script/min/public.min.js?v=20200914"></script>
 -	<script type="text/javascript" src="tr-web-control/script/other/ua-parser.min.js?v=20200914"></script>
@@ -48,18 +48,30 @@
 -	<script type="text/javascript" src="tr-web-control/script/min/system.min.js?v=20201001"></script>
 -	<script type="text/javascript" src="tr-web-control/config.js?v=20200914"></script>
 -	<script type="text/javascript" src="tr-web-control/plugin.js?v=20200914"></script>
-+	<script type="text/javascript" src="tr-web-control/script/min/public.min.js?v=20261019"></script>
-+	<script type="text/javascript" src="tr-web-control/script/other/ua-parser.min.js?v=20261019"></script>
-+	<script type="text/javascript" src="tr-web-control/script/min/transmission.min.js?v=20261019"></script>
-+<script src="tr-web-control/script/rpc-compat.js?v=20261019"></script>
-+	<script type="text/javascript" src="tr-web-control/script/transmission.torrents.js?v=20261019"></script>
-+	<script type="text/javascript" src="tr-web-control/script/system.js?v=20261019"></script>
-+	<script type="text/javascript" src="tr-web-control/config.js?v=20261019"></script>
-+	<script type="text/javascript" src="tr-web-control/plugin.js?v=20261019"></script>
++	<script type="text/javascript" src="tr-web-control/script/min/public.min.js?v=20261019-2"></script>
++	<script type="text/javascript" src="tr-web-control/script/other/ua-parser.min.js?v=20261019-2"></script>
++	<script type="text/javascript" src="tr-web-control/script/min/transmission.min.js?v=20261019-2"></script>
++<script src="tr-web-control/script/rpc-compat.js?v=20261019-2"></script>
++	<script type="text/javascript" src="tr-web-control/script/transmission.torrents.js?v=20261019-2"></script>
++	<script type="text/javascript" src="tr-web-control/script/system.js?v=20261019-2"></script>
++	<script type="text/javascript" src="tr-web-control/config.js?v=20261019-2"></script>
++	<script type="text/javascript" src="tr-web-control/plugin.js?v=20261019-2"></script>
  	<script type="text/javascript">
  		var nonpc = ["console", "mobile", "tablet", "smarttv", "wearable", "embedded"]
  		if ((nonpc.indexOf($.ua.device.type) != -1) && location.search.getQueryString("devicetype") != "computer") {
-@@ -58,7 +59,7 @@
+ 			location.href = "index.mobile.html";
+ 		}
+ 	</script>
++<link rel="stylesheet" href="tr-web-control/style/desktop-ui.css?v=20261019-2"/>
++<script src="tr-web-control/script/desktop-ui.js?v=20261019-2"></script>
+ </head>
+ 
+-<body>
++<body class="twc-desktop">
+ 	<div id="main" class="easyui-layout">
+ 		<div id="m_top" data-options="region:'north'">
+ 			<div class="easyui-layout" data-options="fit:true">
+@@ -58,7 +61,7 @@
  							data-options="iconCls:'iconfont tr-icon-help'"><span system-lang="public['text-have-update']"></span></a>
  					</span>
  					<div style="float:right;padding:13px;">
@@ -68,7 +80,7 @@
  						<!-- 切换主题 -->
  						<select id="select-themes" style="width:120px;height:25px"></select>
  						<!-- 切换到移动版 -->
-@@ -77,7 +78,7 @@
+@@ -77,7 +80,7 @@
  							class="easyui-linkbutton" data-options="iconCls:'icon-about',plain:true"
  							system-tip-lang="toolbar.about"><span system-lang="toolbar.about"></span></a>
  					</div>
@@ -77,6 +89,15 @@
  					</div>
  				</div>
  				<!-- 工具栏 -->
+@@ -174,7 +177,7 @@
+ 			<div id="layout_body" class="easyui-layout" data-options="fit:true">
+ 				<div id="m_list" data-options="region:'center',border:0"></div>
+ 				<div id="m_attribute" title="attribute"
+-					data-options="region:'south',split:true,border:0,collapsed:true,href:'tr-web-control/template/torrent-attribute.html',cache:true,onResize:function(w,h){system.layoutResize('attribute', {height:h});}">
++					data-options="region:'south',split:true,border:0,collapsed:true,href:'tr-web-control/template/torrent-attribute.html?v=20261019-2',cache:true,onResize:function(w,h){system.layoutResize('attribute', {height:h});}">
+ 				</div>
+ 			</div>
+ 		</div>
 --- upstream/index.mobile.html
 +++ localized/index.mobile.html
 @@ -1,5 +1,5 @@
@@ -232,7 +253,7 @@
  	pageList: [10, 20, 30, 40, 50, 100, 150, 200, 250, 300, 5000],
  	// The initial interface defaults to the selected node, the name can refer to the language package tree
 -	defaultSelectNode: "actively",
-+	defaultSelectNode: "all",
++	defaultSelectNode: "torrent-all",
  	// Whether the torrent details are automatically expanded
  	autoExpandAttribute: false,
  	// default language
@@ -930,7 +951,7 @@
 +  "title": {
 +    "left": "导航",
 +    "list": "种子列表",
-+    "attribute": "当前种子属性",
++    "attribute": "任务详情 · 点选任务查看，拖动上沿调整高度",
 +    "status": "状态"
 +  },
 +  "tree": {
@@ -1203,10 +1224,10 @@
 +    },
 +    "attribute": {
 +      "tabs": {
-+        "base": "常规",
-+        "servers": "服务器",
++        "base": "概览",
++        "servers": "Tracker",
 +        "files": "文件",
-+        "users": "用户",
++        "users": "连接用户",
 +        "config": "设置"
 +      },
 +      "files-fields": {
@@ -1321,7 +1342,92 @@
 +    "text-ignore-this-version": "忽略这个版本",
 +    "text-json-file-parsing-failed": "JSON文件解析失败！"
 +  }
- }--- upstream/tr-web-control\script\rpc-compat.js
+ }--- upstream/tr-web-control\script\desktop-ui.js
++++ localized/tr-web-control\script\desktop-ui.js
+@@ -0,0 +1,82 @@
++/* Desktop detail layout for Transmission Web Control. MIT, wzya2026. */
++(function (root, $) {
++    "use strict";
++    var system = root.system;
++    if (!system || !$) return;
++    function value(id, text) { $("#desktop-detail-" + id).text(text == null ? "—" : text); }
++    function duration(seconds) {
++        seconds = Math.max(0, Math.floor(Number(seconds) || 0));
++        var days = Math.floor(seconds / 86400), hours = Math.floor(seconds / 3600) % 24, minutes = Math.floor(seconds / 60) % 60;
++        return (days ? days + " 天 " : "") + (hours ? hours + " 小时 " : "") + minutes + " 分钟";
++    }
++    function summary(torrent) {
++        if (!torrent) {
++            value("name", "点选上方任务，查看详细信息"); value("status", "未选择任务");
++            ["size", "completed", "download", "upload", "ratio"].forEach(function (key) { value(key, "—"); });
++            $("#desktop-detail-progress").attr("aria-valuenow", 0).find("span").css("width", "0%");
++            return;
++        }
++        var percent = Math.min(100, Math.max(0, (Number(torrent.percentDone) || 0) * 100));
++        value("name", torrent.name);
++        $("#desktop-detail-name").attr("title", torrent.name || "");
++        value("status", (system.lang.torrent["status-text"][torrent.status] || "") + " · " + percent.toFixed(1) + "%");
++        value("size", root.formatSize(Number(torrent.totalSize) || 0));
++        value("completed", root.formatSize(Math.max(0, (Number(torrent.totalSize) || 0) - (Number(torrent.leftUntilDone) || 0))));
++        value("download", root.formatSize(Number(torrent.rateDownload) || 0, false, "speed"));
++        value("upload", root.formatSize(Number(torrent.rateUpload) || 0, false, "speed"));
++        value("ratio", Number(torrent.uploadRatio) < 0 ? "—" : Number(torrent.uploadRatio || 0).toFixed(2));
++        $("#desktop-detail-progress").attr("aria-valuenow", percent.toFixed(1)).find("span").css("width", percent + "%");
++    }
++    system.showDesktopDetails = function (torrent) {
++        if (!this.panel || !this.panel.attribute) return;
++        var changed = this.currentTorrentId !== torrent.id;
++        this.currentTorrentId = torrent.id;
++        if (changed) this.clearTorrentAttribute();
++        summary(root.transmission.torrents.all[torrent.id] || torrent);
++        if (this.panel.attribute.panel("options").collapsed) this.panel.layout_body.layout("expand", "south");
++    };
++    var init = system.initUIStatus;
++    system.ensureDesktopInitialSelection = function () {
++        if (this.desktopListReady || !this.lang || !root.transmission.torrents.all || !this.control.torrentlist || !this.control.torrentlist.data("datagrid")) return;
++        var node = this.panel.left.tree("getSelected");
++        if (!node) node = this.panel.left.tree("find", this.config.defaultSelectNode) || this.panel.left.tree("find", "torrent-all");
++        if (!node) return;
++        this.desktopListReady = true;
++        this.panel.left.tree("select", node.target);
++    };
++    system.initUIStatus = function () {
++        if (this.config.defaultSelectNode === "all") this.config.defaultSelectNode = "torrent-all";
++        var result = init.apply(this, arguments);
++        this.ensureDesktopInitialSelection();
++        if (!this.uiIsInitialized || this.desktopDetailsInitialized) return result;
++        this.desktopDetailsInitialized = true;
++        var saved = this.lastUIStatus.size.attribute && Number(this.lastUIStatus.size.attribute.height);
++        var maximum = Math.max(180, Math.floor(root.innerHeight * 0.65));
++        var height = saved > 180 ? Math.min(saved, maximum) : Math.min(420, Math.max(260, Math.floor(root.innerHeight * 0.43)));
++        this.panel.layout_body.layout("panel", "south").panel("resize", { height: height });
++        this.panel.layout_body.layout("expand", "south");
++        this.panel.layout_body.layout("resize");
++        summary(null);
++        return result;
++    };
++    var fill = system.fillTorrentBaseInfos;
++    system.fillTorrentBaseInfos = function (torrent) {
++        var result = fill.apply(this, arguments);
++        summary(torrent);
++        var extra = {
++            downloadedEver: root.formatSize(Number(torrent.downloadedEver) || 0),
++            secondsDownloading: duration(torrent.secondsDownloading),
++            secondsSeeding: duration(torrent.secondsSeeding),
++            isPrivate: torrent.isPrivate ? "是" : "否"
++        };
++        Object.keys(extra).forEach(function (key) { $("#torrent-attribute-value-" + key).text(extra[key]); });
++        return result;
++    };
++    var clear = system.clearTorrentAttribute;
++    system.clearTorrentAttribute = function () {
++        var result = clear.apply(this, arguments);
++        summary(null);
++        return result;
++    };
++    root.TWCDesktopDetails = { duration: duration };
++})(window, window.jQuery);
+--- upstream/tr-web-control\script\rpc-compat.js
 +++ localized/tr-web-control\script\rpc-compat.js
 @@ -0,0 +1,85 @@
 +/* Transmission Web Control community continuation.
@@ -1415,14 +1521,74 @@
  // Current system global object
  var system = {
 -	version: "1.6.1",
-+	version: "1.6.1-zhCN.1",
++	version: "1.6.1-zhCN.2",
  	rootPath: "tr-web-control/",
 -	codeupdate: "20200913",
 +	codeupdate: "20261019",
  	configHead: "transmission-web-control",
  	// default config, can be customized in config.js
  	config: {
-@@ -2982,6 +2982,7 @@
+@@ -795,6 +795,7 @@
+ 					if (selectedIndex != -1) {
+ 						system.control.torrentlist.datagrid("unselectRow", selectedIndex);
+ 					}
++					system.showDesktopDetails(rowData);
+ 					system.getTorrentInfos(rowData.id);
+ 					selectedIndex = rowIndex;
+ 				},
+@@ -852,6 +853,7 @@
+ 					});
+ 				}
+ 			});
++			system.ensureDesktopInitialSelection();
+ 		}, "json");
+ 
+ 		// 刷新当前页数据
+@@ -2616,16 +2618,13 @@
+ 	getTorrentInfos: function (id) {
+ 		if (!transmission.torrents.all[id]) return;
+ 		if (transmission.torrents.all[id].infoIsLoading) return;
+-		if (this.currentTorrentId > 0 && transmission.torrents.all[this.currentTorrentId]) {
+-			if (transmission.torrents.all[this.currentTorrentId].infoIsLoading) return;
+-		}
+ 		this.currentTorrentId = id;
+ 		// Loads only when expanded
+ 		if (!this.panel.attribute.panel("options").collapsed) {
+ 			//this.panel.attribute.panel({iconCls:"icon-loading"});
+ 			var torrent = transmission.torrents.all[id];
+ 			torrent.infoIsLoading = true;
+-			var fields = "fileStats,trackerStats,peers,leftUntilDone,status,rateDownload,rateUpload,uploadedEver,uploadRatio,error,errorString,pieces,pieceCount,pieceSize";
++			var fields = "fileStats,trackerStats,peers,leftUntilDone,status,rateDownload,rateUpload,uploadedEver,uploadRatio,error,errorString,pieces,pieceCount,pieceSize,downloadedEver,secondsDownloading,secondsSeeding,isPrivate";
+ 			// If this is the first time to load this torrent information, load more information
+ 			if (!torrent.moreInfosTag) {
+ 				fields += ",files,trackers,comment,dateCreated,creator,downloadDir";
+@@ -2639,7 +2638,6 @@
+ 				// Merge the currently returned value to the current torrent
+ 				jQuery.extend(torrent, result[0]);
+ 				if (system.currentTorrentId == 0 || system.currentTorrentId != id) {
+-					system.clearTorrentAttribute();
+ 					return;
+ 				}
+ 
+@@ -2731,7 +2729,7 @@
+ 				// Speed
+ 				case "rateDownload":
+ 				case "rateUpload":
+-					value = formatSize(value, true, "speed");
++					value = formatSize(value, false, "speed");
+ 					break;
+ 
+ 					// Size
+@@ -2855,7 +2853,7 @@
+ 					// Dates
+ 					case "lastAnnounceTime":
+ 					case "nextAnnounceTime":
+-						rowdata[key] = formatLongTime(stats[key]);
++						rowdata[key] = stats[key] > 0 ? formatLongTime(stats[key]) : "—";
+ 						break;
+ 
+ 						// true/false
+@@ -2982,6 +2980,7 @@
  							indeterminate = true;
  						}
  						useTag = true;
@@ -1430,7 +1596,7 @@
  					case "downloadLimited":
  					case "uploadLimited":
  						if (value == true || value == 1) {
-@@ -3233,6 +3234,8 @@
+@@ -3233,6 +3232,8 @@
  		}
  	},
  	checkUpdate: function () {
@@ -1446,7 +1612,7 @@
  */
  var system = {
 -	version: "1.6.0 beta",
-+	version: "1.6.1-zhCN.1",
++	version: "1.6.1-zhCN.2",
  	rootPath: "tr-web-control/",
 -	codeupdate: "20180906",
 +	codeupdate: "20261019",
@@ -1565,7 +1731,32 @@
  </script>
 --- upstream/tr-web-control\template\torrent-attribute.html
 +++ localized/tr-web-control\template\torrent-attribute.html
-@@ -91,7 +91,7 @@
+@@ -1,6 +1,14 @@
+ <div class="easyui-layout" data-options="fit:true" style="width:100%;height:100%;" id="torrent-attribute-layout">
++<div data-options="region:'north',border:false" class="desktop-detail-summary">
++<div class="desktop-detail-heading"><strong id="desktop-detail-name">点选上方任务，查看详细信息</strong><span id="desktop-detail-status">未选择任务</span></div>
++<div class="desktop-detail-metrics">
++<div id="desktop-detail-progress" role="progressbar" aria-label="任务完成进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
++<span>总大小<b id="desktop-detail-size">—</b></span><span>已完成<b id="desktop-detail-completed">—</b></span>
++<span>下载<b id="desktop-detail-download">—</b></span><span>上传<b id="desktop-detail-upload">—</b></span>
++<span class="desktop-metric-ratio">分享率<b id="desktop-detail-ratio">—</b></span>
++</div></div>
+ 	<div data-options="region:'center'" style="padding:0px;border:0px;">
+-		<div id="torrent-attribute-tabs" class="easyui-tabs" style="width:100%;height:100%;" data-options="fit:true,plain:true,tabPosition:'left',border:0,headerWidth:105">
++		<div id="torrent-attribute-tabs" class="easyui-tabs" style="width:100%;height:100%;" data-options="fit:true,plain:true,tabPosition:'top',border:0">
+ 			<div title="常规" style="padding:2px;" class="dialog">
+ 				<table style="width:100%;">
+ 					<tr>
+@@ -65,6 +73,8 @@
+ 						<td class="title"><span id="torrent-attribute-label-comment"></span></td>
+ 						<td colspan="3"><span id="torrent-attribute-value-comment"></span></td>
+ 					</tr>
++<tr><td class="title">累计下载</td><td><span id="torrent-attribute-value-downloadedEver"></span></td><td class="title">私有种子</td><td><span id="torrent-attribute-value-isPrivate"></span></td></tr>
++<tr><td class="title">下载用时</td><td><span id="torrent-attribute-value-secondsDownloading"></span></td><td class="title">做种用时</td><td><span id="torrent-attribute-value-secondsSeeding"></span></td></tr>
+ 					<tr>
+ 						<td colspan="4">
+ 							<hr/>
+@@ -91,7 +101,7 @@
  						<table style="width:100%;">
  							<tr>
  								<td width="30%" class="title">
@@ -1574,7 +1765,7 @@
  								</td>
  								<td width="20%"><input id="downloadLimit" type="text" class="easyui-numberspinner" enabledof="downloadLimited"/> KB/s</td>
  								<td width="30%" class="title">
-@@ -609,6 +609,7 @@
+@@ -609,6 +619,7 @@
  			for (var key in inputs)
  			{
  				var input = inputs[key];

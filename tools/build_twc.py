@@ -22,12 +22,12 @@ for name in ['index.html','index.mobile.html']:
  p.write_text(s,encoding='utf-8',newline='\r\n')
 shutil.copyfile(R/'rpc-compat.js',out/'tr-web-control/script/rpc-compat.js')
 edit('tr-web-control/config.js','defaultLang: ""','defaultLang: "zh-CN"')
-edit('tr-web-control/config.js','defaultSelectNode: "actively"','defaultSelectNode: "all"')
+edit('tr-web-control/config.js','defaultSelectNode: "actively"','defaultSelectNode: "torrent-all"')
 theme_names={'Default':'默认','Gray':'灰色','Metro':'简洁','Material':'质感','Bootstrap':'经典','Black':'黑色','Metro Blue':'简洁蓝','Metro Gray':'简洁灰','Metro Green':'简洁绿','Metro Orange':'简洁橙','Metro Red':'简洁红','Cupertino':'浅色','Dark Hive':'深色','Pepper Grinder':'棕色','Sunny':'暖色','Base':'基础','UI':'更多主题'}
 p=out/'tr-web-control/config.js';s=p.read_text(encoding='utf-8')
 for old,new in theme_names.items():s=s.replace("text: '"+old+"'","text: '"+new+"'").replace("group: '"+old+"'","group: '"+new+"'")
 p.write_text(s,encoding='utf-8',newline='\r\n')
-edit('tr-web-control/script/system.js','version: "1.6.1"','version: "1.6.1-zhCN.1"')
+edit('tr-web-control/script/system.js','version: "1.6.1"','version: "1.6.1-zhCN.2"')
 edit('tr-web-control/script/system.js','codeupdate: "20200913"','codeupdate: "20261019"')
 # Avoid the archived updater advertising the unmodified legacy release over this continuation.
 edit('tr-web-control/script/system.js','checkUpdate: function (','checkUpdate: function (',count=1) if False else None
@@ -35,7 +35,7 @@ for name in ['system.js','system.mobile.js']:
  p=out/'tr-web-control/script'/name
  if p.exists():
   s=p.read_text(encoding='utf-8')
-  s=re.sub(r'version:\s*"1\.6\.[^"]*"','version: "1.6.1-zhCN.1"',s,count=1)
+  s=re.sub(r'version:\s*"1\.6\.[^"]*"','version: "1.6.1-zhCN.2"',s,count=1)
   s=re.sub(r'codeupdate:\s*"[^"]*"','codeupdate: "20261019"',s,count=1)
   # Both clients use the same RPC compatibility layer. UI-specific old updater is read-only.
   s=re.sub(r'(checkUpdate\s*:\s*function\s*\([^)]*\)\s*\{)',r'\1\n return; // Upstream is archived; local updates are distributed as reviewed packages.\n',s)
@@ -94,6 +94,41 @@ lang['toolbar']['ui-original']='官方原版'
 lang['toolbar']['tip']['ui-original']='切换到官方原版界面（英文，供排错使用）'
 langfile.write_text(json.dumps(lang,ensure_ascii=False,indent=2),encoding='utf-8',newline='\r\n')
 shutil.copyfile(up/'LICENSE',out/'LICENSE-transmission-web-control.txt')
+# Desktop layout inspired by the familiar list + lower information pane pattern.
+for asset in ['desktop-ui.js','desktop-ui.css']:
+ target=out/'tr-web-control'/('script' if asset.endswith('.js') else 'style')/asset
+ shutil.copyfile(ROOT/'src'/asset,target)
+edit('index.html','<body>','<body class="twc-desktop">')
+edit('index.html','</head>','<link rel="stylesheet" href="tr-web-control/style/desktop-ui.css?v=20261019-2"/>\n<script src="tr-web-control/script/desktop-ui.js?v=20261019-2"></script>\n</head>')
+edit('index.html',"href:'tr-web-control/template/torrent-attribute.html'","href:'tr-web-control/template/torrent-attribute.html?v=20261019-2'")
+p=out/'index.html';s=p.read_text(encoding='utf-8').replace('?v=20261019"','?v=20261019-2"');p.write_text(s,encoding='utf-8',newline='\n')
+edit('tr-web-control/script/system.js','system.getTorrentInfos(rowData.id);','system.showDesktopDetails(rowData);\n\t\t\t\t\tsystem.getTorrentInfos(rowData.id);')
+edit('tr-web-control/script/system.js','\t\t}, "json");\n\n\t\t// 刷新当前页数据','\t\t\tsystem.ensureDesktopInitialSelection();\n\t\t}, "json");\n\n\t\t// 刷新当前页数据')
+edit('tr-web-control/script/system.js','\t\tif (this.currentTorrentId > 0 && transmission.torrents.all[this.currentTorrentId]) {\n\t\t\tif (transmission.torrents.all[this.currentTorrentId].infoIsLoading) return;\n\t\t}\n','')
+edit('tr-web-control/script/system.js','if (system.currentTorrentId == 0 || system.currentTorrentId != id) {\n\t\t\t\t\tsystem.clearTorrentAttribute();','if (system.currentTorrentId == 0 || system.currentTorrentId != id) {')
+edit('tr-web-control/script/system.js','pieceCount,pieceSize"','pieceCount,pieceSize,downloadedEver,secondsDownloading,secondsSeeding,isPrivate"')
+edit('tr-web-control/script/system.js','rowdata[key] = formatLongTime(stats[key]);','rowdata[key] = stats[key] > 0 ? formatLongTime(stats[key]) : "—";')
+edit('tr-web-control/script/system.js','value = formatSize(value, true, "speed");','value = formatSize(value, false, "speed");')
+rel='tr-web-control/template/torrent-attribute.html'
+summary='''<div data-options="region:'north',border:false" class="desktop-detail-summary">
+<div class="desktop-detail-heading"><strong id="desktop-detail-name">点选上方任务，查看详细信息</strong><span id="desktop-detail-status">未选择任务</span></div>
+<div class="desktop-detail-metrics">
+<div id="desktop-detail-progress" role="progressbar" aria-label="任务完成进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+<span>总大小<b id="desktop-detail-size">—</b></span><span>已完成<b id="desktop-detail-completed">—</b></span>
+<span>下载<b id="desktop-detail-download">—</b></span><span>上传<b id="desktop-detail-upload">—</b></span>
+<span class="desktop-metric-ratio">分享率<b id="desktop-detail-ratio">—</b></span>
+</div></div>
+'''
+edit(rel,'\t<div data-options="region:\'center\'"',summary+'\t<div data-options="region:\'center\'"')
+edit(rel,"tabPosition:'left',border:0,headerWidth:105","tabPosition:'top',border:0")
+more='''<tr><td class="title">累计下载</td><td><span id="torrent-attribute-value-downloadedEver"></span></td><td class="title">私有种子</td><td><span id="torrent-attribute-value-isPrivate"></span></td></tr>
+<tr><td class="title">下载用时</td><td><span id="torrent-attribute-value-secondsDownloading"></span></td><td class="title">做种用时</td><td><span id="torrent-attribute-value-secondsSeeding"></span></td></tr>
+'''
+edit(rel,'\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td colspan="4">',more+'\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td colspan="4">')
+langfile=out/'tr-web-control/i18n/zh_CN.json';lang=json.loads(langfile.read_text(encoding='utf-8'))
+lang['title']['attribute']='任务详情 · 点选任务查看，拖动上沿调整高度'
+lang['torrent']['attribute']['tabs'].update({'base':'概览','servers':'Tracker','users':'连接用户'})
+langfile.write_text(json.dumps(lang,ensure_ascii=False,indent=2),encoding='utf-8',newline='\r\n')
 patch=[];changed=[]
 for p in out.rglob('*'):
  if not p.is_file():continue

@@ -3,7 +3,7 @@ import tarfile,io,gzip,copy,hashlib,json,re,zipfile,urllib.request
 ROOT=Path(__file__).resolve().parent.parent
 R=ROOT/'.build'
 D=ROOT/'dist';D.mkdir(exist_ok=True)
-VERSION='4.1.3-3101'
+VERSION='4.1.3-3102'
 STAMP=1792368000
 def sha(data):return hashlib.sha256(data).hexdigest()
 def tgz(entries):
@@ -58,7 +58,7 @@ with tarfile.open(R/'transmission-4.1.3-31-original-x64.spk') as old:
    text=re.sub(r'^displayname=.*$','displayname="Transmission 中文适配版"',text,flags=re.M)
    text=re.sub(r'^maintainer=.*$','maintainer="Community Chinese adaptation; upstream SynoCommunity and ronggang"',text,flags=re.M)
    text=re.sub(r'^distributor=.*$','distributor="Unofficial local Chinese build"',text,flags=re.M)
-   text=re.sub(r'^changelog=.*$','changelog="基于 Transmission 4.1.3-31 和 Transmission Web Control 1.6.1；新增 4.1 JSON-RPC 适配、顺序下载、默认公开 Tracker 与 IPv4/IPv6 检查；中文安装向导。"',text,flags=re.M)
+   text=re.sub(r'^changelog=.*$','changelog="新增桌面式上下分栏、横向任务详情标签及进度速度摘要；修复快速切换任务和首次列表加载；保留 4.1 JSON-RPC 适配及中文安装向导。"',text,flags=re.M)
    text+='\ndescription_chs="Transmission 中文网页适配包，保留原下载内核，基于作者归档版前端更新。非 SynoCommunity 官方发布。"\n'
    data=text.encode('utf-8')
   elif m.name.startswith('WIZARD_UIFILES/') and data:
@@ -68,7 +68,7 @@ with tarfile.open(R/'transmission-4.1.3-31-original-x64.spk') as old:
   entry=copy.copy(m)
   if data is not None:entry.size=len(data)
   spk.append((entry,data))
-filename='Transmission-4.1.3-3101-zhCN-x64-DSM7.spk'
+filename='Transmission-4.1.3-3102-zhCN-x64-DSM7.spk'
 assert len(original_binary_hashes)>=6,'No original core binary files selected for verification'
 b=io.BytesIO()
 with tarfile.open(fileobj=b,mode='w',format=tarfile.GNU_FORMAT) as t:
@@ -83,6 +83,6 @@ with tarfile.open(D/filename) as t:
   for name,digest in original_binary_hashes.items():assert sha(files.extractfile(name).read())==digest,name
   assert b'rpc-compat.js' in files.extractfile('share/transmission/public_html/index.html').read()
   assert '基本设置' in t.extractfile('WIZARD_UIFILES/install_uifile.sh').read().decode()
-manifest={'version':VERSION,'web_version':'1.6.1-zhCN.1','upstream_spk_sha256':json.loads((R/'original-manifest.json').read_text())['sha256'],'source_commit':json.loads((R/'twc-upstream-manifest.json').read_text())['commit'],'spk':filename,'spk_sha256':sha(b.getvalue()),'payload_md5':hashlib.md5(payload).hexdigest(),'preserved_core_files':original_binary_hashes,'web_tar_sha256':sha(webtgz),'dsm_minimum':'7.1-42661','signature':'unsigned custom package; not an official SynoCommunity release'}
+manifest={'version':VERSION,'web_version':'1.6.1-zhCN.2','upstream_spk_sha256':json.loads((R/'original-manifest.json').read_text())['sha256'],'source_commit':json.loads((R/'twc-upstream-manifest.json').read_text())['commit'],'spk':filename,'spk_sha256':sha(b.getvalue()),'payload_md5':hashlib.md5(payload).hexdigest(),'preserved_core_files':original_binary_hashes,'web_tar_sha256':sha(webtgz),'dsm_minimum':'7.1-42661','signature':'unsigned custom package; not an official SynoCommunity release'}
 (D/'build-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps({'spk':filename,'bytes':len(b.getvalue()),'sha256':sha(b.getvalue()),'original_core_files_verified_unchanged':len(original_binary_hashes)},ensure_ascii=True),flush=True)

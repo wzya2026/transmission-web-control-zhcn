@@ -1,0 +1,46 @@
+/* A compact desktop layout; no external fonts or services. */
+body.twc-desktop { color: #263447; background: #f4f7fb; }
+body.twc-desktop * { font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; }
+.twc-desktop #clipboard-source { position: fixed; left: 0; top: 0; width: 1px; height: 1px; opacity: 0; pointer-events: none; z-index: -1; }
+.twc-desktop #m_left_layout { width: 224px; }
+.twc-desktop #m_toolbar { height: 34px; padding: 2px 4px; background: #f7f9fc; border-top: 1px solid #e4eaf2; }
+.twc-desktop #m_title_layout { background: #fff; }
+.twc-desktop #m_statusbar { color: #526477; background: #f4f7fb; border-top: 1px solid #dce5ef; }
+.twc-desktop .panel-header { background: #eef3f9; border-color: #dce5ef; }
+.twc-desktop .panel-title { color: #334b68; font-weight: 600; }
+.twc-desktop .layout-split-south { border-top: 6px solid #e0e8f2; }
+.twc-desktop .layout-split-west { border-right: 5px solid #e8eef6; }
+.twc-desktop .tree-node { height: 26px; padding-top: 3px; box-sizing: border-box; }
+.twc-desktop .tree-node-selected { background: #e4efff; color: #155aa7; }
+.twc-desktop .datagrid-header { background: #eef3f9; }
+.twc-desktop .datagrid-header-row { height: 30px; }
+.twc-desktop .datagrid-row { height: 29px; }
+.twc-desktop .datagrid-row-alt { background: #f8fafd; }
+.twc-desktop .datagrid-row-selected { background: #dfeeff; color: #1d416d; }
+.twc-desktop .datagrid-row-over { background: #edf5ff; }
+.twc-desktop .datagrid-header td, .twc-desktop .datagrid-body td { border-color: #e6ecf3; }
+.twc-desktop .datagrid-cell { font-size: 12px; }
+.twc-desktop .datagrid-header .datagrid-cell { color: #4b6079; font-weight: 600; }
+.twc-desktop #m_attribute { background: #fff; }
+.twc-desktop .desktop-detail-summary { height: 76px; padding: 10px 14px; box-sizing: border-box; background: #f9fbfe; border-bottom: 1px solid #e1e9f3; overflow: hidden; }
+.desktop-detail-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 8px; }
+#desktop-detail-name { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#desktop-detail-status { color: #2369b4; white-space: nowrap; }
+.desktop-detail-metrics { display: flex; align-items: center; gap: 22px; color: #6a7b8f; white-space: nowrap; }
+.desktop-detail-metrics b { margin-left: 7px; color: #334b68; font-weight: 500; }
+#desktop-detail-progress { width: 120px; height: 6px; border-radius: 3px; overflow: hidden; background: #e0e8f2; flex-shrink: 0; }
+#desktop-detail-progress span { display: block; height: 100%; width: 0; background: #3686d9; border-radius: 3px; transition: width .2s; }
+.twc-desktop #torrent-attribute-tabs > .tabs-header { background: #fff; border-color: #dce5ef; }
+.twc-desktop #torrent-attribute-tabs .tabs { height: 32px; padding-left: 8px; }
+.twc-desktop #torrent-attribute-tabs .tabs li a.tabs-inner { height: 30px; line-height: 30px; border: 0; border-radius: 0; background: transparent; padding: 0 18px; color: #61748b; }
+.twc-desktop #torrent-attribute-tabs .tabs li.tabs-selected a.tabs-inner { color: #1b69b7; border-bottom: 2px solid #2c82d7; font-weight: 600; }
+.twc-desktop #torrent-attribute-tabs .dialog > table { border-collapse: collapse; }
+.twc-desktop #torrent-attribute-tabs .dialog > table td { padding: 5px 10px; border-bottom: 1px solid #eef2f7 !important; }
+.twc-desktop #torrent-attribute-tabs .dialog > table td.title { background: #f8fafd; color: #6c7c90; white-space: nowrap; }
+.twc-desktop #torrent-attribute-tabs .dialog > table td:not(.title) { overflow-wrap: anywhere; }
+.twc-desktop #torrent-attribute-pieces { padding: 4px 0; }
+@media (max-width: 1100px) {
+    .desktop-detail-metrics { gap: 12px; }
+    .desktop-detail-metrics .desktop-metric-ratio { display: none; }
+    #desktop-detail-progress { width: 80px; }
+}
