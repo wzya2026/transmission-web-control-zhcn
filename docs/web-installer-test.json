@@ -1,0 +1,5 @@
+{
+  "install": true,
+  "rollback": true,
+  "scope": "isolated container filesystem only"
+}

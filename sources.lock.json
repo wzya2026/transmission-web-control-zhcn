@@ -1,0 +1,17 @@
+{
+  "original_spk": {
+    "url": "https://packages.synocommunity.com/transmission/31/transmission.v31.f42661%5Bapollolake-avoton-braswell-broadwell-broadwellnk-broadwellnkv2-broadwellntbap-bromolow-cedarview-denverton-epyc7002-geminilake-geminilakenk-grantley-icelaked-kvmx64-purley-r1000-r1000nk-v1000-v1000nk%5D.spk",
+    "sha256": "9137a5a326f60ecd2bd34cc4e2210ce530adaab259b1bfac510b65c45dd1ffc1",
+    "filename": "transmission-4.1.3-31-original-x64.spk"
+  },
+  "twc": {
+    "repository": "https://github.com/ronggang/transmission-web-control",
+    "commit": "054e2edf7ee1ec859cec3ee5661a550481321a27",
+    "archive_url": "https://codeload.github.com/ronggang/transmission-web-control/tar.gz/054e2edf7ee1ec859cec3ee5661a550481321a27",
+    "sha256": "89b75f5542dc157dbf08df07b3f20161c100235149bd5b516970b045ced25c3f"
+  },
+  "spksrc_commit": "16b00abc5f7ff2ca75f716b6116c75f4a7dc0f25",
+  "transmission_tag": "4.1.3",
+  "package_version": "4.1.3-3101",
+  "web_version": "1.6.1-zhCN.1"
+}

@@ -1,0 +1,22 @@
+{
+  "daemon": "4.1.3 (838877323f)",
+  "protocol": "6.0.1",
+  "passed": 15,
+  "checks": [
+    "session fields retain original UI names and types",
+    "statistics and nested current session fields",
+    "free space response",
+    "add torrent with a Chinese filename, paused by default",
+    "duplicate torrent response",
+    "torrent fields, Unicode names, file selection and peer-limit alias",
+    "per-torrent sequential mode, speed limit and native labels",
+    "start and pause operations",
+    "recently-active identifier conversion",
+    "new global defaults, cache unit and encryption compatibility",
+    "verify local data request",
+    "remove only the disposable test task",
+    "expired CSRF session retries once",
+    "user paths, URLs and labels remain opaque values",
+    "legacy protocol fallback"
+  ]
+}
